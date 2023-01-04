@@ -8,16 +8,19 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   const news = [
     {
+      id:'1',
       title: "PayPal enables transfer of digital currencies to external wallets",
       body: "The move comes after nearly two years since PayPal enabled users to buy and sell crypto on its platform.After rolling out the ability to buy and sell crypto on its platform in October 2020, PayPal is finally allowing users the ability to natively transfer, send and receive digital assets between PayPal and other wallets and exchanges. As of Tuesday, the feature is available to select U.S. users, with the feature expanding to all eligible U.S. users in the coming weeks. The first batch of supported coins consists of Bitcoin BTC $16, 704, Ether  ETH $1, 217, Bitcoin Cash BCH $100, and Litecoin LTC $74.58. In addition, customers who transfer their crypto onto PayPal can spend it via Checkout at millions of merchant terminals.The company has been granted a full Bitlicense by the New York Department of Financial Services for the conduct.Users would simply need to log in to their accounts and enter the crypto section of the application to start transferring coins.Users are generally required to complete a one- time ID verification before the procedure. Crypto transfers to recipients outside of PayPal would incur a network fee based on their respective blockchains, but transfers between PayPal users will not incur such fees.To protect users privacy, the firm generates a new recipient address for each transaction into ones PayPal account.PayPal will also not charge fees for incoming transfers, The company is also working to integrate other forms of cryptocurrency services, such as central bank digital currencies, to boost its digital footprint.It is also exploring the possibility of launching its own stablecoin, dubbed PayPal Coin. The discovery came after a developer found evidence of such a stablecoin within the source code of the company's iPhone app. ",
       img: '/1.jpg'
     },
     {
+      id:'2',
       title: 'Italian Parliament Approves 26 percent Crypto-Gains Tax in 2023 Budget',
       body: "Prime Minister Giorgia Meloni's new bill also includes an incentive for those declaring crypto for tax purposes.Crypto traders in Italy will be subject to a 26percent capital-gains tax starting in 2023, according to a new budget that won parliamentary approval on Thursday. Italian Prime Minister Giorgia Meloni's 2023 expansionary budget  which was completed in a rush before the end of the year  features 21 billion euros ($22.3 billion) in tax breaks to assist businesses and households facing the energy crisis, Reuters reported. In Italy, where crypto remains largely unregulated, the 387-page budget legitimizes crypto assets by defining them as 'a digital representation of value or rights, which can be transferred and stored electronically, using the technology of distributed ledger or similar technology. Italy's (and most recently Portugal's) move to introduce a capital- gains tax on crypto comes ahead of the implementation of the European Union's Markets in Crypto Assets (MiCA) regulation that promises a licensing frameworks and stringent operating requirements for crypto-service providers in the 27-member bloc. The 26 percent rate applies to gains from crypto trading if they exceed 2, 000 euros per tax period.As an incentive for declaring crypto profits, the new bill also sets a 'substitute income tax' for investors at 14 percent of the value ofassets held as of Jan. 1, 2023, instead of the cost at the time of purchase. According to the new rules, losses from crypto investments can be deducted from profits and be carried forward.  Investors, however, may require some additional guidance on what qualifies as a taxable event as the document also says, 'the exchange between crypto assets having same characteristics and functions,' doesn't constitute a 'fiscal case'.",
       img: '/2.jpg'
     },
     {
+      id:'3',
       title: `Microstrategy Buys More Bitcoin Company Crypto Holdings Grow to 132500 BTC`,
       body: `Microstrategy is now holding approximately 132,500 bitcoin following its most recent purchases. This year, the world’s largest cryptocurrency has emerged as “the institutional-grade digital asset,” said Microstrategy founder Michael Saylor Microstrategy Acquires More Bitcoin
       Nasdaq-listed Microstrategy Inc. announced Wednesday that it has purchased more bitcoin for its corporate treasury. Michael Saylor, the company’s founder and executive chairman, tweeted Wednesday:Microstrategy has increased its bitcoin holdings by ~2,500 BTC. As of 12/27/22 Microstrategy holds ~132,500 bitcoin acquired for ~$4.03 billion at an average price of ~$30,397 per bitcoin. In its filing with the U.S. Securities and Exchange Commission (SEC), Microstrategy clarified that the 2,500 coins were acquired between Nov. 1 and Dec. 24 by its wholly owned subsidiary Macrostrategy.
@@ -25,6 +28,7 @@ export default function Home() {
       img: '/3.jpg'
     },
     {
+      id:'4',
       title: `Bitcoin Miners’ Revenue Hits $9.55 Billion in 2022`,
       body: `2022 has been a rough and tough year for investors, traders, cryptocurrency businesses, and miners in general. The prolonged bear market, exacerbated by a series of catastrophic events, posed a threat to miners.
       Miners were dealing with a variety of issues, including defaulted loans, quarterly losses, and soaring bitcoin hashrates that reached all-time highs. All these factors were affecting the profitability of the miners and were causing sell pressure.
@@ -37,6 +41,7 @@ export default function Home() {
       img: '/4.jpg'
     },
     {
+      id:'5',
       title: `Mango Markets Exploiter Eisenberg Arrested in Puerto Rico`,
       body: `The investor drained $110 million in cryptocurrencies from the platform. Avraham Eisenberg, the crypto investor whose “highly profitable trading strategy” drained DeFi trading platform Mango Markets of crypto worth $110 million, was           arrested Monday in Puerto Rico, court documents said.
       The self-described game theorist admitted his role in draining Mango Markets’ treasury shortly after the incident in mid-October, and may now be the first U.S. resident to face charges for his role in manipulating a decentralized-finance trading platform.
@@ -62,6 +67,7 @@ export default function Home() {
           news.map(item => {
             return <NewsItem
               key={Math.random()}
+              id={item.id}
               title={item.title}
               img={item.img}
               body={item.body}

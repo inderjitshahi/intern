@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-function NewsItem({ title, img, body }) {
+function NewsItem({ title, img, body,id }) {
     // console.log(body,img,title);
     return (
-        <Link href={`/news/${title}/${body}/${img}`}>
+        <Link href={`/news/${id}`}>
             <div className='flex border-2 h-32 justify-between items-center p-5 md:p-5 bg-white rounded-xl hover:bg-purple-200 active:scale-95 transition duration-100 ease-out'>
                 <div>
                     <span className='font-semibold text-2xl'>{title}</span>
