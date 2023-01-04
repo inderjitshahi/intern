@@ -3,8 +3,45 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-function News() {
+function News({news}) {
     const router = useRouter();
+
+    let id = router.query.id;
+    console.log(id);
+    // if (title === 'Microstrategy Buys More Bitcoin Company Crypto Holdings Grow to 132500 BTC') img = '3.jpg'
+    return (
+        <div className='flex flex-col text-center min-h-screen'>
+            <Header />
+            <div>
+                <div className='py-3 text-2xl bg-black text-white'>
+                    <span className="font-bold">
+                        {news[id - 1].title}
+                    </span>
+                </div>
+                <div>
+                    <div className='relative h-64 w-full'>
+                        <Image
+                            src={`${news[id - 1].img}`}
+                            objectFit='cover'
+                            fill
+                            alt='news image'
+                        />
+                    </div>
+                </div>
+
+            </div>
+            <div className='py-10 text-gray-500 bg-white px-2 md:px-5'>
+                <p>
+                    {news[id - 1].body}
+                </p>
+            </div>
+            <Footer />
+        </div>
+    );
+}
+
+export default News;
+export async function getServerSideProps(context) {
     const news = [
         {
             title: "PayPal enables transfer of digital currencies to external wallets",
@@ -46,38 +83,7 @@ function News() {
             img: '/5.jpg'
         },
     ]
-    let id = router.query.id;
-    console.log(id);
-    // if (title === 'Microstrategy Buys More Bitcoin Company Crypto Holdings Grow to 132500 BTC') img = '3.jpg'
-    return (
-        <div className='flex flex-col text-center min-h-screen'>
-            <Header />
-            <div>
-                <div className='py-3 text-2xl bg-black text-white'>
-                    <span className="font-bold">
-                        {news[id-1].title}
-                    </span>
-                </div>
-                <div>
-                    <div className='relative h-64 w-full'>
-                        <Image
-                            src={`${news[id-1].img}`}
-                            objectFit='cover'
-                            fill
-                            alt='news image'
-                        />
-                    </div>
-                </div>
-
-            </div>
-            <div className='py-10 text-gray-500 bg-white px-2 md:px-5'>
-                <p>
-                    {news[id-1].body}
-                </p>
-            </div>
-            <Footer />
-        </div>
-    );
+    return {
+        props:{news}
+    }
 }
-
-export default News;
